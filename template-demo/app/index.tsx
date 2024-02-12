@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { ProviderAll } from './Provider';
-import LoginTemplate from './_auth/Login';
+import LoginTemplate from './(auth)/login/page';
 import Dashboard from './_dashboard';
 
 export default function Template() {

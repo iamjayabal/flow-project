@@ -5,6 +5,7 @@ import ChangeLanguage from '@_translation/ChangeLanguage';
 import { authActions } from '@_store/auth';
 import TabSelection from '@_shared/tab/TabSelection';
 import HeaderIcons from './HeaderIcons';
+import ThemeSwitcher from './theme_switch';
 
 export default function Header() {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ export default function Header() {
 
         <HeaderIcons />
         <ChangeLanguage />
+        <ThemeSwitcher />
       </Navbar>
     </>
   );

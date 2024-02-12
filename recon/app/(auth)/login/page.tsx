@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Card, Spacer, Button, Input, Checkbox, Link } from '@nextui-org/react';
 import { Email, Lock, RemoveRedEye, VisibilityOff } from '@mui/icons-material';

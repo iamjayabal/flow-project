@@ -1,6 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { Button } from '@nextui-org/react';
+import { Button, Spacer } from '@nextui-org/react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { authActions } from '../../store/auth';
@@ -23,7 +23,7 @@ import { tabSelectionActions } from '../../store/tab_selection_slice';
 interface AppBarProps extends MuiAppBarProps {
   open?: boolean;
 }
-let tabs = [
+let tabData = [
   {
     id: 'tab1',
     label: 'Tab1',
@@ -46,12 +46,14 @@ let tabs = [
       'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
   },
 ];
-export default function TabSelection() {
+export default function TabSelection({ data }: { data: [] }) {
+  const [tabs, setTabs] = useState(tabData);
   const dispatch = useDispatch();
 
-  const onLogoutHandler = () => {
-    dispatch(authActions.logout());
-  };
+  useEffect(() => {
+    console.log('use effect ', data);
+    setTabs(data);
+  }, []);
   const handleTabSelection = (event: any) => {
     console.log('selected testing ', event);
     const selectedObj = tabs.filter((data) => data.id === event);
@@ -60,6 +62,7 @@ export default function TabSelection() {
   };
   return (
     <>
+      <Spacer y={4} />
       <Tabs
         variant='underlined'
         aria-label='Tabs variants'

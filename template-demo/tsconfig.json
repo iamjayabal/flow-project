@@ -27,7 +27,7 @@
       "@_layout/*": ["./app/_layout/*"],
       "@_utils/*": ["./app/_utils/*"],
       "@_shared/*": ["./app/_shared/*"],
-      "@_pages/*": ["./app/pages/*"]
+      "@_pages/*": ["app/(pages)/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

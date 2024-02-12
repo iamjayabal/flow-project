@@ -22,7 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={motserrat.className}>{children}</body>
+      <body className={motserrat.className}>
+        {/* <header>
+          <h1>Header</h1>
+        </header> */}
+        {children}
+        {/* <footer>
+          <h1>Footer</h1>
+        </footer> */}
+      </body>
     </html>
   );
 }

@@ -1,3 +1,7 @@
 .header__block {
   display: flex;
 }
+
+header {
+  max-width: inherit !important;
+}

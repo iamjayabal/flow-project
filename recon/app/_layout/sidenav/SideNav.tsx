@@ -74,12 +74,9 @@ export default function SideNav() {
           <List component='nav'>
             <ThemeSwitch />
             <div className='flex justify-center py-5'>
-              {/* <Avatar src='https://i.pravatar.cc/150?u=a042581f4e29026024d' /> */}
               <SideNavAvatar />
             </div>
-            <MainListItems toggleSubmenu={toggleSubmenu} />
-            <Divider sx={{ my: 1 }} />
-            <Logout />
+            <MainListItems />
           </List>
           <Divider />
           <Toolbar
@@ -96,34 +93,6 @@ export default function SideNav() {
             </IconButton>
           </Toolbar>
         </Drawer>
-
-        {/* submenu drawer  */}
-        {/* <Drawer
-          className={
-            'submenu__block ' +
-            (activeMenu !== '' ? 'show' : dir === 'ltr' ? 'hide' : 'hide-r')
-          }
-          variant='permanent'
-          anchor='left'
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            [`& .MuiDrawer-paper`]: {
-              width: drawerWidth,
-              boxSizing: 'border-box',
-            },
-          }}
-        >
-          <SubMenuItem />
-        </Drawer> */}
-        <SwipeableDrawer
-          anchor='left'
-          open={openSubmenu}
-          onClose={toggleSubmenu}
-          onOpen={toggleSubmenu}
-        >
-          <SubMenuItem toggleSubmenu={toggleSubmenu} />
-        </SwipeableDrawer>
       </Box>
     </>
   );

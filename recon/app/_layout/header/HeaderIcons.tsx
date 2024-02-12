@@ -3,6 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
 import Notification from '@_components/notification/Notification';
+import CallIcon from '@mui/icons-material/Call';
 
 export default function HeaderIcons() {
   return (
@@ -10,6 +11,14 @@ export default function HeaderIcons() {
       <Box sx={{ flexGrow: 1 }}>
         <Box sx={{ flexGrow: 1 }} />
         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <IconButton
+            size='large'
+            aria-label='contact us by phone'
+            color='inherit'
+          >
+            <CallIcon />
+          </IconButton>
+
           <IconButton
             size='large'
             aria-label='show 4 new mails'

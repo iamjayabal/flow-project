@@ -8,10 +8,18 @@ import {
   User,
 } from '@nextui-org/react';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { authActions } from '@/app/store/auth';
 
 const profileLink = { name: 'profile', href: '../pages/profile' };
 
 export default function SideNavAvatar() {
+  const dispatch = useDispatch();
+
+  const onLogoutHandler = () => {
+    dispatch(authActions.logout());
+  };
+
   return (
     <div className='flex items-center gap-4'>
       <Dropdown placement='bottom-end'>
@@ -37,7 +45,7 @@ export default function SideNavAvatar() {
           <DropdownItem key='system'>System</DropdownItem>
           <DropdownItem key='configurations'>Configurations</DropdownItem>
           <DropdownItem key='help_and_feedback'>Help & Feedback</DropdownItem>
-          <DropdownItem key='logout' color='danger'>
+          <DropdownItem onClick={onLogoutHandler} key='logout' color='danger'>
             Log Out
           </DropdownItem>
         </DropdownMenu>
